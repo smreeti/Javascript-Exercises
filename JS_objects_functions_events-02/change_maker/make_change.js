@@ -5,7 +5,7 @@ var $ = function (id) {
 const processEntry = () => {
     const changeDue = parseFloat($("cents").value);
 
-    if (changeDue < 0 || changeDue > 99 || !(Number.isInteger(changeDue))) {
+    if (isNaN(changeDue) || changeDue < 0 || changeDue > 99 || !(Number.isInteger(changeDue))) {
         alert("Change Due must be between 0 and 99.");
         $("cents").value = "";
     } else {
