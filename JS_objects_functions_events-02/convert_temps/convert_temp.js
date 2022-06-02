@@ -15,14 +15,14 @@ window.onload = function () {
 
 const toFahrenheit = () => {
     clearTextBoxes();
-    document.getElementById("degree_label_1").innerHTML = "Enter C Degrees";
-    document.getElementById("degree_label_2").innerHTML = "Degrees Fahrenheit:";
+    $("degree_label_1").innerHTML = "Enter C Degrees";
+    $("degree_label_2").innerHTML = "Degrees Fahrenheit:";
 }
 
 const toCelsius = () => {
     clearTextBoxes();
-    document.getElementById("degree_label_1").innerHTML = "Enter F Degrees";;
-    document.getElementById("degree_label_2").innerHTML = "Degrees Celsius:";;
+    $("degree_label_1").innerHTML = "Enter F Degrees";;
+    $("degree_label_2").innerHTML = "Degrees Celsius:";;
 }
 
 const convertTemp = () => {
@@ -31,7 +31,7 @@ const convertTemp = () => {
         alert("Please enter the valid positive number");
         clearTextBoxes();
     } else {
-        let toCelsius = document.getElementById('to_celsius').checked;
+        let toCelsius = $('to_celsius').checked;
         let degreeComputed = toCelsius ? convertFahrenheitToCelsuis(degreesEntered) : convertCelsiusToFahrenheit(degreesEntered);
         $("degrees_computed").value = parseFloat(degreeComputed).toFixed(0);
     }
