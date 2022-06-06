@@ -28,20 +28,26 @@ const displayResults = () => {
 	const averageScore = (sum / names.length).toFixed(2);
 	const highScore = Math.max(...scores);
 
-	$("results").innerHTML = `<br> <h2> Results </h2>
-	 <p>Average score is ${averageScore}</p> <br> 
-	 High Score is ${highScore}`;
+	$("results").innerHTML =
+		`<br> <h2> Results </h2>
+		 <p>Average score is ${averageScore}</p> <br> 
+		 High Score is ${highScore}`;
 }
 
 const displayScores = () => {
-	$("scores_table").innerHTML = `<br> <h2> Scores </h2>
-	<tr> 
-		<td> <b> Name </b> </td> 
-		<td> <b> Score <b> </td>
-	 </tr>`;
+	$("scores_table").innerHTML =
+		`<br> <h2> Scores </h2>
+		<tr> 
+			<td> <b> Name </b> </td> 
+			<td> <b> Score <b> </td>
+	 	</tr>`;
+
 	names.forEach((name, index) => {
-		const row = `<tr> <td>${name}</td>
-			<td>${scores[index]}</td></tr>`;
+		const row =
+			`<tr> 
+				<td>${name}</td>
+				<td>${scores[index]}</td>
+			</tr>`;
 		$("scores_table").innerHTML += `${row}`;
 	})
 }
