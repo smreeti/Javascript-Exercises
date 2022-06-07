@@ -9,7 +9,7 @@ var toggle = function () {
     let h2Elements = $("faqs").getElementsByTagName("h2");
 
     for (let i = 0; i < h2Elements.length; i++) {
-        if(this != h2Elements[i]){
+        if (this != h2Elements[i]) {
             h2Elements[i].removeAttribute("class");
             h2Elements[i].nextElementSibling.removeAttribute("class");
         }
