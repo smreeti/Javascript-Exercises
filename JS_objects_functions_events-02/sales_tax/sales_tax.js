@@ -27,15 +27,15 @@ const processEntries = () => {
     const subTotal = parseFloat($("subtotal").value);
     const taxRate = parseFloat($("tax_rate").value);
 
-    if (isNaN(subTotal) || subTotal < 0 || subTotal > 10000) {
+    if (isNaN(subTotal) || subTotal <= 0 || subTotal >= 10000) {
         alert("Subtotal must be > 0 and < 10000");
         clear();
-    } else if (isNaN(taxRate) || taxRate < 0 || taxRate > 12) {
-        alert("Tax rate must be >0 and < 12");
+    } else if (isNaN(taxRate) || taxRate <= 0 || taxRate >= 12) {
+        alert("Tax rate must be > 0 and < 12");
         clear();
     } else {
-        const salesTax = parseFloat(calculateSalesTax(subTotal, taxRate)).toFixed(2);
-        $("sales_tax").value = salesTax;
+        const salesTax = parseFloat(calculateSalesTax(subTotal, taxRate));
+        $("sales_tax").value = salesTax.toFixed(2);
         $("total").value = parseFloat(calculateTotal(subTotal, salesTax)).toFixed(2);
     }
 };

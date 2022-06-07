@@ -17,18 +17,20 @@ const toFahrenheit = () => {
     clearTextBoxes();
     $("degree_label_1").innerHTML = "Enter C Degrees";
     $("degree_label_2").innerHTML = "Degrees Fahrenheit:";
+    $("degrees_entered").focus();
 }
 
 const toCelsius = () => {
     clearTextBoxes();
-    $("degree_label_1").innerHTML = "Enter F Degrees";;
-    $("degree_label_2").innerHTML = "Degrees Celsius:";;
+    $("degree_label_1").innerHTML = "Enter F Degrees";
+    $("degree_label_2").innerHTML = "Degrees Celsius:";
+    $("degrees_entered").focus();
 }
 
 const convertTemp = () => {
     const degreesEntered = parseFloat($("degrees_entered").value);
-    if (isNaN(degreesEntered) || degreesEntered < 0) {
-        alert("Please enter the valid positive number");
+    if (isNaN(degreesEntered)) {
+        alert("You must enter a valid number for degrees.");
         clearTextBoxes();
     } else {
         let toCelsius = $('to_celsius').checked;
@@ -37,12 +39,10 @@ const convertTemp = () => {
     }
 }
 
-const convertFahrenheitToCelsuis = (fahrenheit) => {
-    return ((fahrenheit - 32) * 5 / 9);
-}
+const convertFahrenheitToCelsuis = fahrenheit => ((fahrenheit - 32) * 5 / 9);
 
-const convertCelsiusToFahrenheit = (celsius) => {
-    return ((celsius * 9 / 5) + 32);
-}
+
+const convertCelsiusToFahrenheit = celsius => ((celsius * 9 / 5) + 32);
+
 
 

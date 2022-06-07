@@ -22,7 +22,7 @@ const calculateTax = (income) => {
     income = parseInt(income);
     if (income >= 0 && income <= 9275) {
         excessOverAmount = income - 0;
-        incomeTax = $0 + 10 / 100;
+        incomeTax = excessOverAmount * 10 / 100;
     } else if (income > 9275 && income <= 37650) {
         excessOverAmount = income - 9275;
         incomeTax = 927.50 + (15 * excessOverAmount) / 100;
